@@ -269,6 +269,23 @@ export const pricingContent = {
       popular: false,
     },
     {
+      name: "Web Corporativa Growth",
+      price: "S/ 2,990",
+      period: "proyecto",
+      description:
+        "Sitio corporativo con estructura comercial. Ideal para empresas que buscan crecer y captar de manera ordenada.",
+      features: [
+        "Hasta 5 páginas",
+        "Sección de servicios y blog",
+        "Formularios e integración básica",
+        "Diseño responsive premium",
+        "Analítica básica y SEO técnico",
+        "Optimizado para conversiones",
+      ],
+      cta: "Agendar reunión",
+      popular: false,
+    },
+    {
       name: "Web + Automatización",
       price: "S/ 4,990",
       period: "proyecto",
@@ -280,27 +297,10 @@ export const pricingContent = {
         "Respuestas automáticas WhatsApp/Email",
         "Registro o mini-dashboard",
         "Validación de funnel inicial",
-        "Analíticas y seguimiento",
-      ],
-      cta: "Agendar reunión",
-      popular: true,
-    },
-    {
-      name: "Escala & IA",
-      price: "A medida",
-      period: "consultar",
-      description:
-        "Para empresas que necesitan un ecosistema completo: agentes IA, software propio e integraciones avanzadas.",
-      features: [
-        "Todo lo del plan Web + Automatización",
-        "Agente IA empresarial (Bexa)",
-        "Software a medida o MVP",
-        "Integraciones avanzadas multi-plataforma",
-        "Soporte prioritario continuo",
-        "Consultoría de procesos",
+        "Analíticas y seguimiento avanzado",
       ],
       cta: "Hablemos",
-      popular: false,
+      popular: true,
     },
   ],
 };
