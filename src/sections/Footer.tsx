@@ -38,7 +38,7 @@ export default function Footer() {
           <div className={styles.brand}>
             <div className={styles.logo}>
               <Image
-                src="/logos/bskr-logo.jpg"
+                src="/logos/bskr-logo-alt.jpeg"
                 alt="BSKR Logo"
                 width={36}
                 height={36}
