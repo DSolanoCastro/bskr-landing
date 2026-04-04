@@ -57,7 +57,7 @@ export default function Hero() {
         <h1 className={styles.headline}>
           {heroContent.headline}
           <br />
-          <span className="headline-accent">{heroContent.headlineAccent}</span>
+          <span className={styles.headlineAccent}>{heroContent.headlineAccent}</span>
         </h1>
 
         {/* Subtítulo */}
