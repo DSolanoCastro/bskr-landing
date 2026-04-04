@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { heroContent } from "@/data/site";
 import styles from "./Hero.module.css";
 
@@ -15,9 +16,8 @@ export default function Hero() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    // Generar partículas solo en el cliente para evitar hydration mismatch
     setParticles(
-      Array.from({ length: 20 }, () => ({
+      Array.from({ length: 25 }, () => ({
         left: `${Math.random() * 100}%`,
         top: `${Math.random() * 100}%`,
         delay: `${Math.random() * 5}s`,
@@ -28,7 +28,18 @@ export default function Hero() {
 
   return (
     <section className={`${styles.hero} neural-bg`} id="hero">
-      {/* Partículas decorativas — solo se renderizan en el cliente */}
+      {/* Background image */}
+      <div className={styles.heroBg}>
+        <Image
+          src="/images/hero-bg.png"
+          alt=""
+          fill
+          priority
+          style={{ objectFit: "cover", opacity: 0.3 }}
+        />
+      </div>
+
+      {/* Partículas decorativas */}
       <div className={styles.particles}>
         {particles.map((p, i) => (
           <span
@@ -53,11 +64,25 @@ export default function Hero() {
           </span>
         </div>
 
+        {/* Logo en el hero */}
+        <div className={styles.logoWrap}>
+          <Image
+            src="/logos/bskr-logo.jpg"
+            alt="BSKR Logo"
+            width={120}
+            height={120}
+            className={styles.heroLogo}
+            priority
+          />
+        </div>
+
         {/* Headline principal */}
         <h1 className={styles.headline}>
           {heroContent.headline}
           <br />
-          <span className={styles.headlineAccent}>{heroContent.headlineAccent}</span>
+          <span className={styles.headlineAccent}>
+            {heroContent.headlineAccent}
+          </span>
         </h1>
 
         {/* Subtítulo */}

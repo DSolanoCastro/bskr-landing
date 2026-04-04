@@ -5,8 +5,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/bskr-landing",
-  assetPrefix: "/bskr-landing/",
 };
 
 export default nextConfig;

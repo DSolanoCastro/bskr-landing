@@ -1,64 +1,49 @@
 .section {
   padding-top: var(--section-gap);
   padding-bottom: var(--section-gap);
-  background: var(--surface-container-low);
+  position: relative;
 }
 
 .headline {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  max-width: 600px;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  max-width: 700px;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
 }
 
 .description {
   font-size: 1.0625rem;
   color: var(--on-surface-variant);
-  max-width: 650px;
+  max-width: 700px;
   line-height: 1.7;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .card {
-  padding: 2rem;
+  padding: 2.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-cta);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.card:hover::before {
-  opacity: 1;
+  gap: 1rem;
 }
 
 .tag {
   display: inline-block;
   font-size: 0.6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--secondary);
-  padding: 0.25rem 0.75rem;
-  background: rgba(48, 193, 242, 0.1);
+  text-transform: uppercase;
+  padding: 0.375rem 0.875rem;
   border-radius: var(--radius-full);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.08));
+  color: var(--accent);
+  border: 1px solid rgba(139, 92, 246, 0.2);
   width: fit-content;
 }
 
@@ -71,11 +56,13 @@
 .cardDesc {
   font-size: 0.9375rem;
   color: var(--on-surface-variant);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
   }
 }

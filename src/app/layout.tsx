@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BSKR — IA y Automatización | Presencia digital, automatización e inteligencia artificial",
+  title:
+    "BSKR — IA y Automatización | Presencia digital, automatización e inteligencia artificial",
   description:
     "Combinamos diseño web, automatización e inteligencia artificial para que tu negocio capture más clientes, responda más rápido y escale sin límites. Landing pages, workflows, asistentes IA y software a medida.",
   keywords: [
@@ -26,6 +27,11 @@ export const metadata: Metadata = {
     locale: "es_PE",
     siteName: "BSKR",
   },
+  referrer: "origin-when-cross-origin",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -35,6 +41,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        {/* Security: CSP meta tag */}
+        <meta
+          httpEquiv="X-Content-Type-Options"
+          content="nosniff"
+        />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta
+          httpEquiv="Permissions-Policy"
+          content="camera=(), microphone=(), geolocation=()"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

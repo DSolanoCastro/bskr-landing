@@ -38,12 +38,11 @@ export default function Footer() {
           <div className={styles.brand}>
             <div className={styles.logo}>
               <Image
-                src="/logos/bskr-logo-alt.jpeg"
+                src="/logos/bskr-logo.jpg"
                 alt="BSKR Logo"
                 width={36}
                 height={36}
                 className={styles.logoImg}
-                style={{ width: "36px", height: "auto" }}
               />
               <div>
                 <span className={styles.logoName}>{siteConfig.name}</span>

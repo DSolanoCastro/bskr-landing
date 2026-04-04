@@ -1,33 +1,40 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import Image from "next/image";
+import { X } from "lucide-react";
 import styles from "./BexaPlaceholder.module.css";
 
 /**
  * Placeholder para el asistente BEXA.
- * Fase 1: Solo UI / botón flotante.
+ * Fase 1: Solo UI / botón flotante con imagen custom.
  * Fase 2+: Conectar a backend real, OpenAI, n8n webhook.
- *
- * Para integrar:
- * 1. Reemplazar el contenido del panel con el componente de chat real
- * 2. Conectar via WebSocket o fetch a tu API de Bexa
- * 3. Los estilos ya están preparados para un chat completo
  */
 export default function BexaPlaceholder() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      {/* Botón flotante */}
+      {/* Botón flotante — Imagen custom en vez de icono genérico */}
       <button
         className={styles.fab}
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Cerrar asistente" : "Abrir asistente BEXA"}
         id="bexa-trigger"
       >
-        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+        {isOpen ? (
+          <X size={24} color="#fff" />
+        ) : (
+          <Image
+            src="/logos/bexa-fab.png"
+            alt="Bexa IA"
+            width={56}
+            height={56}
+            className={styles.fabImage}
+          />
+        )}
         {!isOpen && <span className={styles.fabPulse} />}
+        {!isOpen && <span className={styles.fabLabel}>¿Necesitas ayuda?</span>}
       </button>
 
       {/* Panel del chat */}
@@ -36,11 +43,20 @@ export default function BexaPlaceholder() {
           <div className={styles.panelHeader}>
             <div className={styles.headerInfo}>
               <div className={styles.avatar}>
-                <MessageCircle size={18} />
+                <Image
+                  src="/logos/bexa-avatar.png"
+                  alt="Bexa Avatar"
+                  width={36}
+                  height={36}
+                  className={styles.avatarImg}
+                />
               </div>
               <div>
                 <span className={styles.headerName}>Bexa</span>
-                <span className={styles.headerStatus}>Asistente IA de BSKR</span>
+                <span className={styles.headerStatus}>
+                  <span className={styles.statusDot} />
+                  Asistente IA de BSKR
+                </span>
               </div>
             </div>
             <button
@@ -68,10 +84,10 @@ export default function BexaPlaceholder() {
             {/* Opciones rápidas */}
             <div className={styles.quickActions}>
               <a href="#servicios" className={styles.quickBtn} onClick={() => setIsOpen(false)}>
-                Ver servicios
+                🛠️ Ver servicios
               </a>
               <a href="#precios" className={styles.quickBtn} onClick={() => setIsOpen(false)}>
-                Ver precios
+                💰 Ver precios
               </a>
               <a
                 href="https://wa.me/51999999999"
@@ -79,7 +95,10 @@ export default function BexaPlaceholder() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp
+                💬 WhatsApp
+              </a>
+              <a href="#contacto" className={styles.quickBtn} onClick={() => setIsOpen(false)}>
+                📅 Agendar reunión
               </a>
             </div>
           </div>

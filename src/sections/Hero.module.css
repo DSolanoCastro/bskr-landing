@@ -9,16 +9,30 @@
   position: relative;
 }
 
+/* Background image layer */
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* Massive glowing atmospheric orb */
 .hero::before {
   content: "";
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(10, 110, 189, 0.1) 0%, rgba(108, 58, 237, 0.05) 40%, transparent 70%);
+  width: 1000px;
+  height: 700px;
+  background: radial-gradient(
+    ellipse,
+    rgba(59, 130, 246, 0.12) 0%,
+    rgba(139, 92, 246, 0.06) 35%,
+    rgba(6, 182, 212, 0.04) 60%,
+    transparent 80%
+  );
   filter: blur(80px);
   z-index: 0;
   pointer-events: none;
@@ -27,7 +41,7 @@
 
 @keyframes pulseOrb {
   0% { opacity: 0.6; transform: translateX(-50%) scale(1); }
-  100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.15); }
 }
 
 .content {
@@ -39,9 +53,30 @@
 }
 
 .badgeWrap {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   opacity: 0;
   animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+/* Logo in hero */
+.logoWrap {
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+  display: flex;
+  justify-content: center;
+}
+
+.heroLogo {
+  width: 100px !important;
+  height: auto !important;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2), 0 0 60px rgba(59, 130, 246, 0.08);
+  transition: transform 0.5s ease;
+}
+
+.heroLogo:hover {
+  transform: scale(1.05) rotate(-2deg);
 }
 
 .headline {
@@ -53,11 +88,11 @@
   opacity: 0;
   animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
   color: #fff;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .headlineAccent {
-  background: linear-gradient(135deg, #70b1ff 0%, #30c1f2 50%, #6c3aed 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #22d3ee 40%, #a78bfa 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -96,12 +131,12 @@
   gap: 2rem;
   opacity: 0;
   animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(16, 29, 51, 0.5);
   padding: 1.5rem 2.5rem;
   border-radius: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   max-width: max-content;
   margin: 0 auto;
 }
@@ -112,7 +147,7 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0 1.5rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 .stat:last-child {
   border-right: none;
@@ -144,20 +179,27 @@
 
 .particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
   background: var(--primary);
-  opacity: 0.2;
-  box-shadow: 0 0 10px var(--primary);
+  opacity: 0.15;
+  box-shadow: 0 0 12px var(--primary);
   animation: floatParticle 6s infinite ease-in-out;
 }
 
 .particle:nth-child(even) {
   background: var(--secondary);
-  box-shadow: 0 0 10px var(--secondary);
-  width: 3px;
-  height: 3px;
+  box-shadow: 0 0 12px var(--secondary);
+  width: 2px;
+  height: 2px;
+}
+
+.particle:nth-child(3n) {
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  width: 2px;
+  height: 2px;
 }
 
 .fadeBottom {
@@ -165,7 +207,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 150px;
+  height: 200px;
   background: linear-gradient(to bottom, transparent, var(--bg));
   pointer-events: none;
   z-index: 2;
@@ -189,7 +231,7 @@
   }
   50% {
     transform: translateY(-30px) translateX(15px);
-    opacity: 0.4;
+    opacity: 0.35;
   }
 }
 
@@ -212,5 +254,8 @@
   .ctas {
     flex-direction: column;
     align-items: stretch;
+  }
+  .heroLogo {
+    width: 80px !important;
   }
 }

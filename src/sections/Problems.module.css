@@ -1,13 +1,15 @@
 .section {
   padding-top: var(--section-gap);
   padding-bottom: var(--section-gap);
-  background: var(--surface-container-low);
+  position: relative;
 }
 
 .headline {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
   max-width: 700px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
 }
 
 .description {
@@ -26,33 +28,38 @@
 
 .card {
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
 }
 
 .iconWrap {
   width: 48px;
   height: 48px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 113, 108, 0.1);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.15), rgba(248, 113, 113, 0.05));
+  border: 1px solid rgba(248, 113, 113, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--error);
-  margin-bottom: 0.25rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover .iconWrap {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 4px 16px rgba(248, 113, 113, 0.2);
 }
 
 .cardTitle {
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--on-surface);
+  margin-bottom: 0.5rem;
 }
 
 .cardDesc {
   font-size: 0.9375rem;
   color: var(--on-surface-variant);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 @media (max-width: 768px) {
