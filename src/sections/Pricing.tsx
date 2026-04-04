@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { pricingContent } from "@/data/site";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { Check } from "lucide-react";
@@ -68,7 +69,17 @@ export default function Pricing() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Link a página de precios completa */}
+        <ScrollReveal delay={400}>
+          <div className={styles.detailsLinkWrap}>
+            <Link href="/precios" className={styles.detailsLink}>
+              {pricingContent.detailsLabel}
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
 }
+
