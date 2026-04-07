@@ -38,7 +38,7 @@ export default function Footer() {
           <div className={styles.brand}>
             <div className={styles.logo}>
               <Image
-                src="/logos/bskr-logo.jpg"
+                src={`${process.env.NODE_ENV === "production" ? "/bskr-landing" : ""}/logos/bskr-logo.jpg`}
                 alt="BSKR Logo"
                 width={36}
                 height={36}

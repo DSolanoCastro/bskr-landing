@@ -26,7 +26,7 @@ export default function BexaPlaceholder() {
           <X size={24} color="#fff" />
         ) : (
           <Image
-            src="/logos/bexa-fab.png"
+            src={`${process.env.NODE_ENV === "production" ? "/bskr-landing" : ""}/logos/bexa-fab.png`}
             alt="Bexa IA"
             width={56}
             height={56}
@@ -44,7 +44,7 @@ export default function BexaPlaceholder() {
             <div className={styles.headerInfo}>
               <div className={styles.avatar}>
                 <Image
-                  src="/logos/bexa-avatar.png"
+                  src={`${process.env.NODE_ENV === "production" ? "/bskr-landing" : ""}/logos/bexa-avatar.png`}
                   alt="Bexa Avatar"
                   width={36}
                   height={36}

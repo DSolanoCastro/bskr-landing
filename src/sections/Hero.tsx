@@ -31,7 +31,7 @@ export default function Hero() {
       {/* Background image */}
       <div className={styles.heroBg}>
         <Image
-          src="/images/hero-bg.png"
+          src={`${process.env.NODE_ENV === "production" ? "/bskr-landing" : ""}/images/hero-bg.png`}
           alt=""
           fill
           priority
@@ -67,7 +67,7 @@ export default function Hero() {
         {/* Logo en el hero */}
         <div className={styles.logoWrap}>
           <Image
-            src="/logos/bskr-logo.jpg"
+            src={`${process.env.NODE_ENV === "production" ? "/bskr-landing" : ""}/logos/bskr-logo.jpg`}
             alt="BSKR Logo"
             width={120}
             height={120}

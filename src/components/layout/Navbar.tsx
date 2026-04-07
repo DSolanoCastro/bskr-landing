@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className={styles.logo} aria-label="BSKR Home">
           <Image
-            src="/logos/bskr-logo.jpg"
+            src={`${process.env.NODE_ENV === "production" ? "/bskr-landing" : ""}/logos/bskr-logo.jpg`}
             alt="BSKR Logo"
             width={40}
             height={40}
