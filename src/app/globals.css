@@ -3,7 +3,7 @@
    Modern, premium, vibrant palette
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
@@ -54,15 +54,18 @@
   --success: #34d399;
   --warning: #fbbf24;
 
-  /* Gradients — More vibrant */
+  /* Gradients — More vibrant & Professional */
   --gradient-cta: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #8b5cf6 100%);
   --gradient-text: linear-gradient(135deg, #60a5fa 0%, #22d3ee 50%, #a78bfa 100%);
   --gradient-glow: linear-gradient(135deg, #3b82f640 0%, #06b6d440 100%);
-  --gradient-aurora: linear-gradient(135deg, #1e3a5f 0%, #0a1628 40%, #1a1040 100%);
+  --gradient-aurora: linear-gradient(135deg, #030b18 0%, #081222 50%, #0a0518 100%);
+  --mesh-1: rgba(59, 130, 246, 0.15);
+  --mesh-2: rgba(139, 92, 246, 0.12);
+  --mesh-3: rgba(6, 182, 212, 0.1);
 
   /* Glass — Slightly more visible */
-  --glass-bg: rgba(16, 29, 51, 0.55);
-  --glass-border: rgba(71, 85, 105, 0.2);
+  --glass-bg: rgba(10, 22, 40, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: 24px;
 
   /* Shadows */
@@ -315,10 +318,45 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 
-/* ---- Animations ---- */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* ---- Mesh Background ---- */
+.mesh-bg {
+  position: relative;
+  background: var(--gradient-aurora);
+  overflow: hidden;
+}
+
+.mesh-bg::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, var(--mesh-1) 0%, transparent 40%),
+    radial-gradient(circle at 70% 60%, var(--mesh-2) 0%, transparent 40%),
+    radial-gradient(circle at 40% 80%, var(--mesh-3) 0%, transparent 40%);
+  filter: blur(60px);
+  animation: meshFlow 20s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes meshFlow {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(5deg) scale(1.1); }
+  100% { transform: rotate(-5deg) scale(1); }
+}
+
+@keyframes orbPulse {
+  0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(182, 0, 248, 0.6); }
+  100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); }
+}
+
+/* Aplicar animación a la burbuja de Dialogflow Messenger */
+df-messenger {
+  animation: orbPulse 4s infinite ease-in-out;
+  border-radius: 50%;
 }
 
 @keyframes pulse-glow {

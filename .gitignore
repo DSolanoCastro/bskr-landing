@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# temporary/config files
+test-bexa.js
+gcloud-installer.exe
+body.json
+import_body.json
+patch_body.json
+patch_gcs.json
+patch_master.json
+tool_body.json
+tool_body_gcs.json
+tool_master.json
+tool_patch_body.json
+tool_patch_final.json
+bskr_knowledge.jsonl
+cerebro.html

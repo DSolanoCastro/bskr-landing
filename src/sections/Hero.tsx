@@ -27,7 +27,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className={`${styles.hero} neural-bg`} id="hero">
+    <section className={`${styles.hero} mesh-bg`} id="hero">
       {/* Background image */}
       <div className={styles.heroBg}>
         <Image
@@ -35,7 +35,7 @@ export default function Hero() {
           alt=""
           fill
           priority
-          style={{ objectFit: "cover", opacity: 0.3 }}
+          style={{ objectFit: "cover", opacity: 0.15 }}
         />
       </div>
 
