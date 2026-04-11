@@ -65,17 +65,20 @@ export default function RootLayout({
           src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"
           async
         />
-        {/* @ts-expect-error - df-messenger is a web component from Google */}
-        <df-messenger
-          location="us-central1"
-          project-id="enduring-wharf-492723-v8"
-          agent-id="2fe660b4-4a6b-4c63-881e-679a74efb910"
-          language-code="es"
-          max-query-length="-1"
-        >
-          {/* @ts-expect-error - df-messenger-chat-bubble is a web component from Google */}
-          <df-messenger-chat-bubble chat-title="Bexa — Asistente BSKR" />
-        </df-messenger>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `
+              <df-messenger
+                location="us-central1"
+                project-id="enduring-wharf-492723-v8"
+                agent-id="2fe660b4-4a6b-4c63-881e-679a74efb910"
+                language-code="es"
+                max-query-length="-1">
+                <df-messenger-chat-bubble chat-title="Bexa — Asistente BSKR"></df-messenger-chat-bubble>
+              </df-messenger>
+            `,
+          }}
+        />
 
         <style
           dangerouslySetInnerHTML={{

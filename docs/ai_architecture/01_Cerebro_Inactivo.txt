@@ -1,0 +1,34 @@
+# BSKR — Base de Conocimiento para Bexa v1.0
+Fecha de actualización: 7 de abril de 2026
+
+## 1. Identidad de la Empresa
+*   **Nombre:** BSKR
+*   **Acrónimo/Eslogan:** IA y automatización.
+*   **Propósito:** Combinar diseño web, automatización e inteligencia artificial para captar leads y escalar operaciones.
+
+## 2. Servicios y Precios (En Soles - S/)
+
+### A. Landing Pages & Web
+*   **Landing Estratégica (S/ 1,490):** 1 página de alta conversión, responsive, SEO básico, WhatsApp integrado. Entrega en 7-10 días.
+*   **Web Corporativa Growth (S/ 2,990):** Hasta 5 páginas, sección de servicios, blog, analíticas.
+*   **Web + Automatización (S/ 4,990):** Web completa + 1 flujo automatizado (Leads a CRM/Sheets).
+
+### B. Automatización e IA
+*   **Automatización MVP (Desde S/ 3,500):** 1 proceso principal, hasta 3 integraciones.
+*   **Agente IA Empresarial (Desde S/ 2,500):** Configuración de canal, base de documentos, entrenamiento inicial.
+
+### C. Software a Medida & SaaS
+*   **MVP Web App (Desde S/ 12,000):** Aplicación funcional escalable.
+*   **SaaS Vertical - PerfumAI (S/ 349/mes + Onboarding S/ 1,200):** Gestión de inventario, precios e IA para perfumerías.
+
+## 3. Proceso de Trabajo (5 Pasos)
+1.  **Discovery:** Entender dolores y objetivos.
+2.  **Estrategia:** Arquitectura y diseño orientado a conversión.
+3.  **Desarrollo:** Código limpio y profesional.
+4.  **Automatización:** Conexión de workflows y APIs.
+5.  **Lanzamiento:** Optimización basada en datos.
+
+## 4. Datos de Contacto
+*   **Email:** hola@bskr.io
+*   **WhatsApp:** https://wa.me/51999999999
+*   **Reunión:** Gratuita de 30 minutos via Calendly.
