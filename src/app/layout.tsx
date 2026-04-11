@@ -53,7 +53,51 @@ export default function RootLayout({
           content="camera=(), microphone=(), geolocation=()"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+
+        {/* Bexa AI Assistant — Vertex AI Conversational Messenger */}
+        <link
+          rel="stylesheet"
+          href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css"
+        />
+        <script
+          src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"
+          async
+        />
+        {/* @ts-expect-error - df-messenger is a web component from Google */}
+        <df-messenger
+          location="us-central1"
+          project-id="enduring-wharf-492723-v8"
+          agent-id="2fe660b4-4a6b-4c63-881e-679a74efb910"
+          language-code="es"
+          max-query-length="-1"
+        >
+          {/* @ts-expect-error - df-messenger-chat-bubble is a web component from Google */}
+          <df-messenger-chat-bubble chat-title="Bexa — Asistente BSKR" />
+        </df-messenger>
+
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              df-messenger {
+                z-index: 999;
+                position: fixed;
+                bottom: 16px;
+                right: 16px;
+                --df-messenger-font-color: #e0e0e0;
+                --df-messenger-font-family: 'Inter', 'Google Sans', sans-serif;
+                --df-messenger-chat-background: #0a0a1a;
+                --df-messenger-message-user-background: #6c3aed;
+                --df-messenger-message-bot-background: #1a1a2e;
+                --df-messenger-chat-bubble-background: #6c3aed;
+                --df-messenger-chat-bubble-icon-color: #fff;
+                --df-messenger-send-icon-color: #6c3aed;
+              }
+            `,
+          }}
+        />
+      </body>
     </html>
   );
 }
