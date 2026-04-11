@@ -9,7 +9,7 @@ import Pricing from "@/sections/Pricing";
 import FAQ from "@/sections/FAQ";
 import CTAFinal from "@/sections/CTAFinal";
 import Footer from "@/sections/Footer";
-import BexaPlaceholder from "@/components/chatbot/BexaPlaceholder";
+
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         <CTAFinal />
       </main>
       <Footer />
-      <BexaPlaceholder />
+
     </>
   );
 }
